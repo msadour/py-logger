@@ -4,7 +4,7 @@ from constants import ERROR, WARNING, INFO, DEBUG
 class DebugConfig:
 
     LEVEL_SEVERITY = DEBUG
-    TARGETS_ALLOWED = []
+    TARGETS_ALLOWED = ["console"]
 
 
 class InfoConfig:
