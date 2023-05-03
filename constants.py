@@ -1,14 +1,4 @@
-DEBUG = 0
-INFO = 1
-WARNING = 2
-ERROR = 3
-
-MINIMUM_ACCEPTED_LOG_LEVEL = WARNING
-
-TARGETS = [
-    "email",
-    "file",
-    "server_api",
-    "splunk",
-]
-
+DEBUG: int = 3
+INFO: int = 2
+WARNING: int = 1
+ERROR: int = 0

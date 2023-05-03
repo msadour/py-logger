@@ -1,6 +1,3 @@
-from constants import TARGETS
-
-
 def send_email(message: str) -> None:
     print(f"Send by email the following message : {message}")
 
@@ -17,9 +14,9 @@ def send_to_splunk(message: str) -> None:
     print(f"Send to splunk the following message : {message}")
 
 
-def perform_target(message: str) -> None:
-    for target in TARGETS:
-
+def perform_target(targets_allowed: list, message: str) -> None:
+    target: str
+    for target in targets_allowed:
         if target == "email":
             send_email(message=message)
 
