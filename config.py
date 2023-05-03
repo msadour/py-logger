@@ -2,13 +2,11 @@ from constants import ERROR, WARNING, INFO, DEBUG
 
 
 class DebugConfig:
-
     LEVEL_SEVERITY = DEBUG
     TARGETS_ALLOWED = ["console"]
 
 
 class InfoConfig:
-
     LEVEL_SEVERITY = INFO
     TARGETS_ALLOWED = [
         "email",
@@ -19,7 +17,6 @@ class InfoConfig:
 
 
 class WarningConfig:
-
     LEVEL_SEVERITY = WARNING
     TARGETS_ALLOWED = [
         "file",
@@ -27,7 +24,6 @@ class WarningConfig:
 
 
 class ErrorConfig:
-
     LEVEL_SEVERITY = ERROR
     TARGETS_ALLOWED = [
         "file",

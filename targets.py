@@ -15,20 +15,38 @@ def logging_target(logger: Logger, message: str, type_logging: str) -> None:
         logger.error(msg=f"ERROR:root:{message}")
 
 
-def perform_target(logger: Logger, targets_allowed: list, message: str, type_logging: str) -> None:
+def perform_target(
+    logger: Logger, targets_allowed: list, message: str, type_logging: str
+) -> None:
     target: str
     for target in targets_allowed:
         if target == "console":
             logging_target(logger=logger, message=message, type_logging=type_logging)
 
         if target == "email":
-            logging_target(logger=logger, message=f"Send by email the following message : {message}", type_logging=type_logging)
+            logging_target(
+                logger=logger,
+                message=f"Send by email the following message : {message}",
+                type_logging=type_logging,
+            )
 
         if target == "file":
-            logging_target(logger=logger, message=f"Write in file the following message : {message}", type_logging=type_logging)
+            logging_target(
+                logger=logger,
+                message=f"Write in file the following message : {message}",
+                type_logging=type_logging,
+            )
 
         if target == "server_api":
-            logging_target(logger=logger, message=f"Send to server the following message : {message}", type_logging=type_logging)
+            logging_target(
+                logger=logger,
+                message=f"Send to server the following message : {message}",
+                type_logging=type_logging,
+            )
 
         if target == "splunk":
-            logging_target(logger=logger, message=f"Send to splunk the following message : {message}", type_logging=type_logging)
+            logging_target(
+                logger=logger,
+                message=f"Send to splunk the following message : {message}",
+                type_logging=type_logging,
+            )
