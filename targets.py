@@ -1,22 +1,24 @@
+import logging
 from logging import Logger
 
 
 def logging_target(logger: Logger, message: str, type_logging: str) -> None:
+
     if type_logging == "debug":
-        logger.debug(msg=f"DEBUG:root:{message}")
+        logger.debug(msg=message)
 
     if type_logging == "info":
-        logger.info(msg=f"INFO:root:{message}")
+        logger.info(msg=message)
 
     if type_logging == "warning":
-        logger.warning(msg=f"WARNING:root:{message}")
+        logger.warning(msg=message)
 
     if type_logging == "error":
-        logger.error(msg=f"ERROR:root:{message}")
+        logger.error(msg=message)
 
 
 def perform_target(
-    logger: Logger, targets_allowed: list, message: str, type_logging: str
+    logger: logging, targets_allowed: list, message: str, type_logging: str
 ) -> None:
     target: str
     for target in targets_allowed:

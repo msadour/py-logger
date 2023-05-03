@@ -1,22 +1,25 @@
 import logging
-import sys
 
 from config import (
+    MINIMUM_ACCEPTED_LOG_LEVEL,
     DebugConfig,
+    ErrorConfig,
     InfoConfig,
     WarningConfig,
-    ErrorConfig,
-    MINIMUM_ACCEPTED_LOG_LEVEL,
 )
+from formater import CustomFormatter
 from targets import perform_target
 
 
 class Logger:
     def __init__(self):
-        self.level_severity = MINIMUM_ACCEPTED_LOG_LEVEL
         self.logger = logging.getLogger()
-        self.logger.addHandler(logging.StreamHandler(sys.stdout))
         self.logger.setLevel(MINIMUM_ACCEPTED_LOG_LEVEL)
+
+        ch = logging.StreamHandler()
+        ch.setFormatter(CustomFormatter())
+
+        self.logger.addHandler(ch)
 
     def debug(self, message: str = "") -> None:
         if self.logger.level >= DebugConfig.LEVEL_SEVERITY:
